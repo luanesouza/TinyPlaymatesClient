@@ -1,0 +1,93 @@
+// Responsive breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+// Common styles for input fields
+@mixin inputStyles {
+  // Common input field styles
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+// Styles for mobile devices
+@media (max-width: $breakpoint-mobile) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .login-form {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+// Styles for tablets
+@media (min-width: $breakpoint-tablet) {
+  .login-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+// Styles for desktop
+@media (min-width: $breakpoint-desktop) {
+  .login-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+// Main styles for the login page
+.container {
+  background-color: #f2f2f2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-form {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  @include inputStyles;
+}
+
+.submit-button {
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #fff;
+  color: black;
+  border: solid 1px black;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
